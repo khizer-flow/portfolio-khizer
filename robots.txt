@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khizer-flow.github.io/portfolio-khizer/sitemap.xml
