@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khizer Jahangir Khan — Full-Stack Developer & AI Engineer</title>
+  <meta name="description" content="Khizer Jahangir Khan is a Full-Stack Software Developer, AI/Automation Engineer, and Founder of WebSync — a development studio building custom web applications, e-commerce architectures, and autonomous AI workflows." />
+  <meta name="author" content="Khizer Jahangir Khan" />
+  <meta property="og:title" content="Khizer Jahangir Khan — Full-Stack Developer & AI Engineer" />
+  <meta property="og:description" content="Founder of WebSync. Building custom web apps, high-conversion e-commerce, and autonomous AI workflows." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #FAFAFA;
+      --ink:     #111111;
+      --muted:   #666666;
+      --faint:   #999999;
+      --border:  #E5E5E5;
+      --border2: #EAEAEA;
+
+      --sans:  'Inter', system-ui, -apple-system, sans-serif;
+      --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --mono:  'JetBrains Mono', 'Courier New', monospace;
+
+      --max-w: 720px;
+      --px: 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    /* ── Links ──────────────────────────────────────────────────── */
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+    a:hover { text-decoration-color: var(--ink); }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header {
+      padding: 52px 0 44px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .status {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    .bio {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink);
+      max-width: 600px;
+      margin-bottom: 22px;
+    }
+
+    .bio strong { font-weight: 500; }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border2);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-links a:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* ── Section ────────────────────────────────────────────────── */
+    section {
+      padding: 52px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 30px;
+    }
+
+    /* ── Filter Bar ─────────────────────────────────────────────── */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-bottom: 36px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .f-btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      padding: 7px 15px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      border-right: 1px solid var(--border);
+      transition: background 0.12s, color 0.12s;
+      white-space: nowrap;
+    }
+    .f-btn:last-child { border-right: none; }
+    .f-btn.on { background: var(--ink); color: #fff; }
+    .f-btn:not(.on):hover { background: var(--border2); color: var(--ink); }
+
+    /* ── Work Groups ────────────────────────────────────────────── */
+    .work-group { margin-bottom: 40px; }
+    .work-group:last-child { margin-bottom: 0; }
+
+    .group-title {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    /* ── Work Items ─────────────────────────────────────────────── */
+    .work-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border2);
+    }
+    .work-item:last-child { border-bottom: none; }
+    .work-item.hidden { display: none; }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .item-right {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .item-stack {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .item-year {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--faint);
+      white-space: nowrap;
+    }
+
+    .item-arrow {
+      font-size: 13px;
+      color: var(--muted);
+      opacity: 0.35;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .item-arrow:hover { opacity: 1; }
+
+    .item-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 5px;
+      line-height: 1.65;
+    }
+
+    /* ── Timeline ───────────────────────────────────────────────── */
+    .tl-item {
+      display: grid;
+      grid-template-columns: 156px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border2);
+    }
+    .tl-item:last-child { border-bottom: none; }
+
+    .tl-date {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--faint);
+      line-height: 1.55;
+      padding-top: 1px;
+    }
+
+    .tl-role {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .tl-org {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    .tl-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── Stack Grid ─────────────────────────────────────────────── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px 40px;
+    }
+
+    .stack-col h4 {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 9px;
+    }
+
+    .stack-col p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      padding: 30px 0 44px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    .footer-link {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border2);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .footer-link:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 580px) {
+      :root { --px: 18px; }
+      header { padding: 36px 0 32px; }
+      section { padding: 40px 0; }
+
+      .header-top { flex-direction: column; gap: 8px; }
+      .status { text-align: left; }
+
+      .tl-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .stack-grid { grid-template-columns: 1fr; gap: 18px; }
+
+      .item-right { gap: 10px; }
+      .item-stack { display: none; }
+
+      .filters { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header>
+    <div class="header-top">
+      <h1>Khizer Jahangir Khan</h1>
+      <div class="status">Abbottabad, PK<br>Available for select projects</div>
+    </div>
+
+    <p class="bio">
+      I'm a software engineer and founder of <strong>WebSync</strong>, a development studio building
+      custom web applications, high-conversion e-commerce architectures, and autonomous AI workflows.
+      Currently finishing my BS in Computer Science at COMSATS University while shipping software
+      for clients globally.
+    </p>
+
+    <ul class="nav-links">
+      <li><a href="mailto:khizerjahangirkhan@gmail.com" id="link-email">Email</a></li>
+      <li><a href="https://github.com/khizerjahangirkhan" target="_blank" rel="noopener" id="link-github">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/khizerjahangirkhan" target="_blank" rel="noopener" id="link-linkedin">LinkedIn</a></li>
+      <li><a href="https://websync.agency" target="_blank" rel="noopener" id="link-websync">WebSync Agency ↗</a></li>
+    </ul>
+  </header>
+
+  <!-- ── SELECTED WORK ────────────────────────────────────────── -->
+  <section id="work">
+    <p class="label">Selected Work</p>
+
+    <!-- Filters -->
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="f-btn on"  data-filter="all"   id="filter-all">All</button>
+      <button class="f-btn"     data-filter="dev"   id="filter-dev">Custom Dev</button>
+      <button class="f-btn"     data-filter="ai"    id="filter-ai">AI &amp; Automation</button>
+      <button class="f-btn"     data-filter="ecom"  id="filter-ecom">Shopify &amp; WP</button>
+      <button class="f-btn"     data-filter="infra" id="filter-infra">Infrastructure</button>
+    </div>
+
+    <!-- Group: Custom Web Apps -->
+    <div class="work-group" data-group="dev">
+      <p class="group-title">Custom Web Applications &amp; Full-Stack Systems</p>
+
+      <article class="work-item" data-cat="dev" id="proj-realestate">
+        <div class="item-row">
+          <span class="item-title">Real Estate IDX &amp; Lead Engine</span>
+          <div class="item-right">
+            <span class="item-stack">React, Node.js<br>IDX/MLS, APIs</span>
+            <span class="item-year">2025</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Custom dark-and-gold luxury real estate web app featuring live MLS/IDX feed integration, interactive map search, and automated lead routing workflows.</p>
+      </article>
+
+      <article class="work-item" data-cat="dev" id="proj-football">
+        <div class="item-row">
+          <span class="item-title">Tactical-AI Framework for Football (FYP &amp; Research)</span>
+          <div class="item-right">
+            <span class="item-stack">Python, PyTorch<br>GNNs, ML</span>
+            <span class="item-year">2026</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Spatio-temporal Graph Neural Network architecture designed to model player tracking data and simulate tactical football interventions.</p>
+      </article>
+
+      <article class="work-item" data-cat="dev" id="proj-web3">
+        <div class="item-row">
+          <span class="item-title">Web3 &amp; Smart Contract Integrations</span>
+          <div class="item-right">
+            <span class="item-stack">Solidity, Web3.js<br>BSC</span>
+            <span class="item-year">2024</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Custom decentralized applications, token data-binding scripts, and smart contract implementations on the BNB Smart Chain.</p>
+      </article>
+
+      <article class="work-item" data-cat="dev" id="proj-enterprise">
+        <div class="item-row">
+          <span class="item-title">Custom Enterprise &amp; MVC Platforms</span>
+          <div class="item-right">
+            <span class="item-stack">TypeScript, React<br>ASP.NET Core, Flutter</span>
+            <span class="item-year">2024–25</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Full-stack web applications and mobile solutions engineered from scratch using TypeScript, React, ASP.NET Core MVC, C#, Flutter, and MongoDB.</p>
+      </article>
+    </div>
+
+    <!-- Group: AI & Automation -->
+    <div class="work-group" data-group="ai">
+      <p class="group-title">AI Agents, Chatbots &amp; Custom Automations</p>
+
+      <article class="work-item" data-cat="ai" id="proj-chatbots">
+        <div class="item-row">
+          <span class="item-title">Autonomous AI Chatbots &amp; Support Agents</span>
+          <div class="item-right">
+            <span class="item-stack">LLMs, RAG<br>Node.js, Python</span>
+            <span class="item-year">2025</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Custom-trained conversational AI agents integrated into client storefronts and web platforms for automated customer support, lead qualification, and booking.</p>
+      </article>
+
+      <article class="work-item" data-cat="ai" id="proj-scraping">
+        <div class="item-row">
+          <span class="item-title">Browser Automation &amp; Data Scraping Pipelines</span>
+          <div class="item-right">
+            <span class="item-stack">Python, Playwright<br>Selenium, Cron</span>
+            <span class="item-year">2024–25</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">End-to-end headless browser bots, automated data extraction pipelines, and workflow scripts that eliminate manual operational work.</p>
+      </article>
+
+      <article class="work-item" data-cat="ai" id="proj-crm">
+        <div class="item-row">
+          <span class="item-title">Automated CRM &amp; Lead Management Workflows</span>
+          <div class="item-right">
+            <span class="item-stack">Webhooks, APIs<br>Node.js</span>
+            <span class="item-year">2025</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Custom backend webhook triggers connecting web forms, MLS feeds, and e-commerce checkouts directly to client sales pipelines.</p>
+      </article>
+    </div>
+
+    <!-- Group: E-Commerce -->
+    <div class="work-group" data-group="ecom">
+      <p class="group-title">E-Commerce Architecture (Shopify &amp; WordPress/WooCommerce)</p>
+
+      <article class="work-item" data-cat="ecom" id="proj-shopify">
+        <div class="item-row">
+          <span class="item-title">Bespoke Shopify Storefronts &amp; Liquid Engineering</span>
+          <div class="item-right">
+            <span class="item-stack">Shopify, Liquid<br>JS, CSS</span>
+            <span class="item-year">2024–25</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">High-converting custom Shopify builds with custom Liquid templates, bespoke theme sections, automated bundle/discount logic, and third-party review integrations.</p>
+      </article>
+
+      <article class="work-item" data-cat="ecom" id="proj-woo">
+        <div class="item-row">
+          <span class="item-title">Victoria Mart &amp; Custom WooCommerce Ecosystems</span>
+          <div class="item-right">
+            <span class="item-stack">WordPress, WooCommerce<br>PHP</span>
+            <span class="item-year">2024</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Full-scale WooCommerce and WordPress builds with synchronized large-scale product catalogs, custom checkout flows, and localized payment gateway integrations.</p>
+      </article>
+    </div>
+
+    <!-- Group: Infrastructure -->
+    <div class="work-group" data-group="infra">
+      <p class="group-title">Infrastructure &amp; Systems Engineering</p>
+
+      <article class="work-item" data-cat="infra" id="proj-wireguard">
+        <div class="item-row">
+          <span class="item-title">Low-Latency WireGuard Cloud Routing</span>
+          <div class="item-right">
+            <span class="item-stack">Azure, Linux<br>WireGuard VPN</span>
+            <span class="item-year">2024</span>
+            <span class="item-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+        <p class="item-desc">Custom VPN infrastructure on Microsoft Azure with tailored IP-range routing tables to optimize packet hops and server connectivity.</p>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- ── EXPERIENCE ───────────────────────────────────────────── -->
+  <section id="experience">
+    <p class="label">Experience</p>
+
+    <div class="tl-item" id="exp-websync">
+      <div class="tl-date">2025 — Present</div>
+      <div>
+        <p class="tl-role">Founder &amp; Lead Full-Stack Developer</p>
+        <p class="tl-org">WebSync</p>
+        <p class="tl-desc">Running an independent software and digital agency delivering custom web apps, mobile apps, Shopify/WooCommerce stores, and AI automation systems for international clients.</p>
+      </div>
+    </div>
+
+    <div class="tl-item" id="exp-zenith">
+      <div class="tl-date">Aug – Nov 2025</div>
+      <div>
+        <p class="tl-role">Front-End Web Development Intern</p>
+        <p class="tl-org">ZenithCraft Ventures</p>
+        <p class="tl-desc">Built responsive front-end interfaces, optimized UI performance, and collaborated on production client web applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ─────────────────────────────────────────────── -->
+  <section id="education">
+    <p class="label">Education</p>
+
+    <div class="tl-item" id="edu-comsats">
+      <div class="tl-date">2023 — 2027</div>
+      <div>
+        <p class="tl-role">BS in Computer Science</p>
+        <p class="tl-org">COMSATS University Islamabad — Abbottabad Campus</p>
+        <p class="tl-desc">Focus areas: Machine Learning, Design &amp; Analysis of Algorithms, Software Requirements Engineering, Mobile Application Development, and Database Systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECHNICAL STACK ───────────────────────────────────────── -->
+  <section id="stack">
+    <p class="label">Technical Stack</p>
+
+    <div class="stack-grid">
+      <div class="stack-col">
+        <h4>Languages</h4>
+        <p>JavaScript (ES6+), TypeScript, Python, C#, PHP, Dart, SQL, R</p>
+      </div>
+      <div class="stack-col">
+        <h4>Frameworks &amp; Web</h4>
+        <p>React, Node.js, ASP.NET Core MVC, Flutter, Tailwind CSS</p>
+      </div>
+      <div class="stack-col">
+        <h4>CMS &amp; E-Commerce</h4>
+        <p>Shopify (Liquid), WordPress, WooCommerce</p>
+      </div>
+      <div class="stack-col">
+        <h4>AI, Data &amp; Infra</h4>
+        <p>AI Agents / Chatbots, Playwright, Selenium, MongoDB, Azure, WireGuard</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.wrap -->
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span class="footer-copy">Built quietly by Khizer Jahangir Khan. &copy; 2026 WebSync.</span>
+      <a class="footer-link" href="mailto:khizerjahangirkhan@gmail.com" id="footer-email">Get in touch</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── JS: Filtering ────────────────────────────────────────────── -->
+<script>
+(function () {
+  var btns   = document.querySelectorAll('.f-btn');
+  var items  = document.querySelectorAll('.work-item');
+  var groups = document.querySelectorAll('.work-group');
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+
+      btns.forEach(function (b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+
+      if (f === 'all') {
+        items.forEach(function (el) { el.classList.remove('hidden'); });
+        groups.forEach(function (g) { g.style.display = ''; });
+      } else {
+        items.forEach(function (el) {
+          el.getAttribute('data-cat') === f
+            ? el.classList.remove('hidden')
+            : el.classList.add('hidden');
+        });
+        groups.forEach(function (g) {
+          var visible = g.querySelectorAll('.work-item:not(.hidden)').length;
+          g.style.display = visible ? '' : 'none';
+        });
+      }
+    });
+  });
+}());
+</script>
+
+</body>
+</html>
